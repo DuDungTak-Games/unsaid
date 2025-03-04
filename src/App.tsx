@@ -57,7 +57,7 @@ function App() {
 추후 이 부분을 superUser로 로그인하는것이 아닌
 일반 유저로 로그인하여 데이터를 가져오는 방식으로 변경해야함
 */
-async function authenticate(pb) {
+async function authenticate(pb: PocketBase) {
   try {
     console.log(`${import.meta.env.VITE_DB_EMAIL} 임`);
     console.log("하이요");
@@ -73,7 +73,7 @@ async function authenticate(pb) {
   }
 }
 
-async function fetchData(pb) {
+async function fetchData(pb: PocketBase) {
   try {
     const records = await pb.collection('user_mt').getFullList();
     console.log(records);
